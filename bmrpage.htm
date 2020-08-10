@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script language="JavaScript">
+        function BMRCalculate()
+        {
+            var age = document.bmrForm.age.value;
+            var weight = document.bmrForm.weight.value;
+			var height = document.bmrForm.height.value;
+			var gender =  document.getElementById('gender');
+			var finalBmr;
+			if(age>0 && weight>0 && height>0)
+			{
+				if(gender=="male")
+				{
+					finalBmr= 88.362 + (13.397*weight) + (4.799*height) - (5.677*age);
+					document.bmrForm.bmr.value = finalBmr;
+				}
+				else {
+					finalBmr=  447.593 + (9.247*weight) + (3.098*height) - (4.330*age);
+					document.bmrForm.bmr.value = finalBmr;
+				}
+			}
+			else 
+			{
+				alert("Please Fill in everything correctly");
+			}
+			return finalBmr;
+		}
+    </script>
+    <style>
+      body{
+background-image: url('run2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+h1{
+text-align:left;
+color:black;
+padding:8px 50px;
+}  
+form{
+text-align:center;
+  width: 1180px;
+    position: absolute;
+	background: rgba(220, 223, 42, 0.3);
+	    width: 50%;
+    height: 60%;
+    border:solid;
+    background-size: cover;
+    top:20%;
+	
+}
+
+.form1{
+padding:8px 0px;
+font-size: 200%;
+}
+.btn{
+  background-color:rgba(38, 228, 21, 0.7); 
+  border:solid;
+  color:black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display:inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} 
+.btn1{
+	font-size: 30px;	
+}
+.form2{
+  text-align:center;
+  width: 1180px;
+    position: absolute;
+	background: rgba(57, 223, 42, 0.3);
+	    width: 70%;
+    height: 70%;
+    border:solid;
+    background-size: cover;
+    top:50%;
+    left:82%;
+} 
+.form3{
+text-align:center;
+  width: 1180px;
+    position: absolute;
+	background: rgba(12, 207, 198, 0.3);
+	    width: 60%;
+    height: 70%;
+    border:solid;
+    background-size: cover;
+    top:10%;
+    left:130%;
+}
+.form4{
+text-align:center;
+  width: 1180px;
+    position: absolute;
+	background: rgba(207, 12, 103, 0.3);
+	    width: 40%;
+    height: 50%;
+    border:solid;
+    background-size: cover;
+    top:-20%;
+    left:140%;
+}
+.form5{
+text-align:center;
+  width: 1180px;
+    position: absolute;
+	background: rgba(235, 25, 10, 0.3);
+	    width: 20%;
+    height: 20%;
+    border:solid;
+    background-size: cover;
+    top:-25%;
+    left:175%;
+}
+    </style>
+  
+</head>
+<body>
+    <h1>BMR CALCULATOR</h1>
+    <form name="bmrForm" >
+        <div class="form1"><br>
+        Your Weight(kg): <input type="number" name="weight" size="20" ><br /></div>
+		<div class="form1">Your Height(cm): <input type="number" name="height" size="20"><br /></div>
+		<div class="form1">Age(years): <input type="number" name="age" size="20" ><br /></div>
+		<div class="btn1">
+        <label for = "male">Male</label>
+        <input type = "radio" name ="gender" id = "male" value = "male"/>
+        <label for = "female">Female </label>
+        <input type = "radio" name ="gender" id = "female" value = "female"/></div><br>
+        <input type="button" class="btn" value="Calculate BMR" onClick="BMRCalculate()"><br />
+        <div class="form1">Your BMR: <input type="text" name="bmr" size="20" readonly><br /></div>
+        <div class="form2">
+        </div>
+        <div class="form3"></div>
+        <div class="form4"></div>
+        <div class="form5"></div>
+	</form>
+</body>
